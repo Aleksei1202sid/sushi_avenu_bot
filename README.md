@@ -12,7 +12,7 @@
    - `python -m venv venv`
    - Windows PowerShell: `.\venv\Scripts\Activate.ps1`
 3) Установите зависимости:
-   - `pip install pytelegrambotapi python-dotenv`
+   - `pip install -r requirements.txt`
 
 ### Настройка окружения
 1) Создайте файл `.env` в корне проекта.
