@@ -12,6 +12,8 @@ load_dotenv()
 secret_token = os.getenv('TOKEN')
 bot = TeleBot(token=secret_token)
 
+logger = logging.getLogger(__name__)
+
 logging.basicConfig(
         format='%(asctime)s; %(levelname)s; '
         '%(funcName)s; %(lineno)d; %(message)s',
@@ -242,7 +244,10 @@ def handle_menu(message):
 
 
 def main():
-    bot.polling()
+    try:
+        bot.polling()
+    except Exception as e:
+        logger.error('Произошла ошибка при запуске бота: %s', type(e).__name__)
 
 
 if __name__ == '__main__':
